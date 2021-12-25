@@ -1,13 +1,19 @@
 import st from "../Portfolio.module.css"
 
-const Toolbar = (props) => {
+interface IProps {
+  filters: string[]
+  selected: string
+  onSelectFilter: Function
+}
+
+const Toolbar = (props: IProps) => {
   return (
     <div className={st.toolbar}>
       {props.filters.map((filter) => (
         <div
           className={filter == props.selected ? `${st.menuItem} ${st.active}` : st.menuItem}
           key={filter}
-          onClick={(e) => props.onSelectFilter(e.target.innerText)}
+          onClick={(e) => props.onSelectFilter((e.target as HTMLInputElement).innerText)}
         >
           {filter}
         </div>

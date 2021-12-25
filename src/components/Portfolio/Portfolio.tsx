@@ -74,8 +74,20 @@ const data = [
   },
 ]
 
-export class Portfolio extends Component {
-  constructor(props) {
+interface IProps {}
+
+interface IState {
+  filters: string[]
+  selected: string
+}
+
+export interface IData {
+  img: string
+  category: string
+}
+
+export class Portfolio extends Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props)
 
     this.state = {
@@ -86,11 +98,11 @@ export class Portfolio extends Component {
     this.onSelectFilter = this.onSelectFilter.bind(this)
   }
 
-  onSelectFilter(filter) {
+  onSelectFilter(filter: string) {
     this.setState({ selected: filter })
   }
 
-  filterProjectsByCategory(projects) {
+  filterProjectsByCategory(projects: IData[]) {
     if (this.state.selected === "All") {
       return projects
     }

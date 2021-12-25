@@ -1,6 +1,11 @@
+import { IData } from "../Portfolio"
 import st from "../Portfolio.module.css"
 
-const ProjectList = (props) => {
+interface IProps {
+  projects: IData[]
+}
+
+const ProjectList = (props: IProps) => {
   return (
     <div className={st.projectList}>
       {props.projects.map((project, i) => (
