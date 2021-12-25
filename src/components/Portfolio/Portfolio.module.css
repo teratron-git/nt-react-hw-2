@@ -1,0 +1,44 @@
+.portfolio {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: row;
+}
+
+.portfolio .container {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+}
+
+.menuItem {
+  padding: 2px 10px;
+  margin: 20px 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.menuItem:first-child {
+  margin-left: 1%;
+}
+
+.menuItem:hover {
+  background-color: cadetblue;
+}
+
+.active {
+  background-color: gray;
+  color: white;
+}
+
+.projectList {
+  display: grid;
+  grid-gap: 2%;
+  grid-template-columns: repeat(3, 32%);
+  grid-auto-flow: dense;
+  justify-items: stretch;
+}

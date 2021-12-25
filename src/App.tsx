@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./App.css"
-import TaskSwitcher from "./components/TaskSwitcher/"
+import Portfolio from "./components/Portfolio"
+import TaskSwitcher from "./components/TaskSwitcher"
 
 const App = () => {
   const [task, setTask] = useState("1")
@@ -13,7 +14,7 @@ const App = () => {
     <>
       <TaskSwitcher task={task} onChangeHandler={handler} />
 
-      {task == "1" && <>Task 1</>}
+      {task == "1" && <Portfolio />}
 
       {task == "2" && <>Task 2</>}
 
