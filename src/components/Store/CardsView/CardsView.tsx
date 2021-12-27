@@ -10,8 +10,8 @@ const CardsView = (props: IProps) => {
   return (
     <div className={st.container}>
       <div className={st.cardView}>
-        {props.cards.map((card, i) => (
-          <ShopCard card={card} key={i} />
+        {props.cards.map((card) => (
+          <ShopCard card={card} key={`${card.name}-${card.color}`} />
         ))}
       </div>
     </div>

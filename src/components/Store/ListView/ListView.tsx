@@ -10,8 +10,8 @@ const ListView = (props: IProps) => {
   return (
     <div className={st.container}>
       <div className={st.listView}>
-        {props.item.map((item, i) => (
-          <ShopItem item={item} key={i} />
+        {props.item.map((item) => (
+          <ShopItem item={item} key={`${item.name}-${item.color}`} />
         ))}
       </div>
     </div>
