@@ -1,9 +1,10 @@
+import React from "react"
 import st from "../Portfolio.module.css"
 
 interface IProps {
   filters: string[]
   selected: string
-  onSelectFilter: Function
+  onSelectFilter: (e: string) => void
 }
 
 const Toolbar = (props: IProps) => {

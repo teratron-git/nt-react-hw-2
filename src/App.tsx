@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./App.css"
+import Dropdown from "./components/Dropdown"
 import Portfolio from "./components/Portfolio"
 import Store from "./components/Store"
 import TaskSwitcher from "./components/TaskSwitcher"
@@ -19,7 +20,7 @@ const App = () => {
 
       {task == "2" && <Store />}
 
-      {task == "3" && <>Task 3</>}
+      {task == "3" && <Dropdown />}
     </>
   )
 }
