@@ -4,10 +4,17 @@ import DropdownItem from "./DropdownItem"
 
 const links = ["Profile Information", "Change Password", "Become PRO", "Help", "Log Out"]
 
-const DropdownList = () => {
+interface IProps {
+  toggleHandler: () => void
+}
+
+const DropdownList = (props: IProps) => {
   const [activeItem, setActiveItem] = useState("Profile Information")
   const setActiveHandler = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     setActiveItem((e.target as HTMLInputElement).innerText)
+
+    // if you don't need to hide menu after select item please comment next string
+    props.toggleHandler()
   }
 
   return (
